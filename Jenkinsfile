@@ -4,9 +4,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        withEnv(["HOME=${env.WORKSPACE}"]) {
-          sh 'pip install -r requirements.txt'
-        }
+          sh 'pip install -r requirements.txt --no-cache'
       }
     }
     stage('test') {
